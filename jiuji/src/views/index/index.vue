@@ -1,6 +1,7 @@
 <template>
   <div id="index">
-    <!-- 搜索栏 -->
+    <div class="nav">
+       <!-- 搜索栏 -->
     <van-search
       v-model="value"
       placeholder="iphone xs Max"
@@ -10,15 +11,16 @@
     >
     </van-search>
     <!-- 导航栏 -->
-    <van-tabs v-model="active" animated :swipe-threshold="5" title-active-color="#fff" title-inactive-color="#ccc" background="#e10f02">
+    <van-tabs v-model="active" animated :swipe-threshold="5" title-active-color="#fff" title-inactive-color="#ccc" background="#e10f02" :line-width="0">
         <van-tab title="推荐">
-          <h1>12</h1>
         </van-tab>
         <van-tab title="限时购"></van-tab>
         <van-tab title="以旧换新"></van-tab>
         <van-tab title="手机快修"></van-tab>
         <van-tab title="头条"></van-tab>
     </van-tabs>
+    </div>
+    <router-view/>
   </div>
 </template>
 
@@ -38,6 +40,23 @@ export default {
   },
   watch: {
     active (index) {
+      switch (index) {
+        case 0:
+          this.$router.push({ path: '/' })
+          break
+        case 1:
+          this.$router.push({ path: 'tabs1' })
+          break
+        case 2:
+          this.$router.push({ path: 'tabs2' })
+          break
+        case 3:
+          this.$router.push({ path: 'tabs3' })
+          break
+        case 4:
+          this.$router.push({ path: 'tabs4' })
+          break
+      }
     }
   }
 }
