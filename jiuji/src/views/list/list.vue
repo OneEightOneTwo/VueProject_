@@ -13,9 +13,9 @@
     <div>
       <span class="icon iconfont icon-gengduo1"></span>
     </div>
-    <div>
+    <div class="main">
       <div class="main_l">
-        <p>手机通讯</p>
+        <p class="red" >手机通讯</p>
         <p>手机配件</p>
         <p>电脑办公</p>
         <p>平板电脑</p>
@@ -92,10 +92,7 @@ export default {
   data() {
     return {
       value: "",
-      active: 0,
-      // Img: "../../img/phone.jpg",
-      W: 448,
-      H: 149
+      active: 0
     };
   },
   methods: {
@@ -140,9 +137,14 @@ export default {
   border: 0px;
 }
 
+.main{
+  border-top: 1px solid #f5f5f5;
+}
 .main_l {
   float: left;
-  background: #ccc;
+  background: #f5f5f5;
+  margin-left: 10px;
+  overflow: auto;
   p {
     width: 150px;
     height: 50px;

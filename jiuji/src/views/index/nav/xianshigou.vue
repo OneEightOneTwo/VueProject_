@@ -11,8 +11,4 @@ export default {
     console.log(this.$route.query)
   }
 }
-<<<<<<< HEAD
 </script>
-=======
-</script>
->>>>>>> 4a97cae4d70c11ca03f8137e49ab8442ca6e91be
