@@ -37,18 +37,52 @@
       </div>
     </div>
   </div>
-<!-- 跑马灯 -->
-<div class="paomadeng">
-  <img src="../../../img/news.png" alt="" class="toutiao" :width: 253px :height: 34px>
-  <div class="child-grow">
-    <van-swipe :autoplay="3000" vertical>
-    <van-swipe-item>112</van-swipe-item>
-    <van-swipe-item>212212</van-swipe-item>
-    <van-swipe-item>321</van-swipe-item>
-    <van-swipe-item>41221</van-swipe-item>
-    </van-swipe>
+  <!-- 跑马灯 -->
+  <div class="paomadeng">
+    <img src="../../../img/news.png" alt="" class="toutiao">
+    <div class="child-grow">
+      <van-swipe :autoplay="3000" vertical :show-indicators="false">
+      <van-swipe-item>
+        <p class="paomadeng-title">华为P30系列新品发布：4000万超感光徕卡四摄！</p>
+        <div class="paomadeng-img"><img src="../../../img/banner13.jpg.webp" alt=""></div>
+      </van-swipe-item>
+      <van-swipe-item>
+        <p class="paomadeng-title">华为P30系列新品发布：4000万超感光徕卡四摄！</p>
+        <div class="paomadeng-img"><img src="../../../img/banner12.jpg.webp" alt=""></div>
+      </van-swipe-item>
+      <van-swipe-item>
+        <p class="paomadeng-title">华为P30系列新品发布：4000万超感光徕卡四摄！</p>
+         <div class="paomadeng-img"><img src="../../../img/banner13.jpg.webp" alt=""></div>
+      </van-swipe-item>
+      <van-swipe-item>
+        <p class="paomadeng-title">华为P30系列新品发布：4000万超感光徕卡四摄！</p>
+        <div class="paomadeng-img"><img src="../../../img/banner12.jpg.webp" alt=""></div>
+      </van-swipe-item>
+      </van-swipe>
+    </div>
   </div>
-</div>
+  <!-- 热销链接img -->
+  <div class="line-img">
+    <div class="link-img-item">
+      <a href="###"> <img src="../../../img/linkimg1.png.webp" alt=""></a>
+     <div class="items">
+        <a href=""> <img src="../../../img/linkimg2.png.webp" alt=""></a>
+        <a href=""> <img src="../../../img/linkimg3.png.webp" alt=""></a>
+      </div>
+    </div>
+    <div class="link-img-item">
+      <a href="###"> <img src="../../../img/linkimg4.jpg.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg5.jpg.webp" alt=""></a>
+    </div>
+    <div class="link-img-item link-img-item3">
+      <a href="###"> <img src="../../../img/linkimg6.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg7.jpg.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg8.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg9.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/youxuan.jpg.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/youxuan1.jpg.webp" alt=""></a>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -67,7 +101,6 @@ export default {
 
 <style lang="scss">
 .tuijian{
-  // 轮播图样式
   .banner{
     height: 173px;
      background: linear-gradient(#e10f02,#e10f02 70%,#fff 0,#fff);
@@ -84,7 +117,6 @@ export default {
        }
      }
   }
-  // 口碑
   .koubei{
     height: 24px;
     img{
@@ -92,7 +124,6 @@ export default {
       height: 24px;
     }
   }
-  // 导航
   .navs{
     overflow: hidden;
     height: 75px;
@@ -107,7 +138,6 @@ export default {
       }
     }
   }
-  // 定时器
   .times{
     .grey-space{
       height: 10px;
@@ -121,7 +151,7 @@ export default {
       .dingshi{
         width:92px;
         height:140px;
-        background: url(../../../img/time.png)no-repeat;
+        background: url(../../../img/time.png) no-repeat;
         background-size: 100%;
       }
       .time-banner{
@@ -141,16 +171,13 @@ export default {
                height: 100%;
                .banner-item{
                  width: 100px;
-                //  height: 100%;
                   padding: 4px 5px;
-                  // background: olive;
                   .title{
                     height: 17px;
                     font-size: 14px;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
-                    container: banner;
                   }
                   .price{
                     height: 20px;
@@ -175,7 +202,6 @@ export default {
                }
              }
            }
-
       }
     }
   }
@@ -195,8 +221,61 @@ export default {
         float: right;
         width: 253px;
         height: 34px;
-        background: #e10f02;
+        .van-swipe{
+           height: 34px;
+           .van-swipe-item{
+              width: 253px;
+              height: 34px;
+              .paomadeng-title{
+                float: left;
+                width:185px;
+                height: 18px;
+                line-height: 18px;
+                font-size: 14px;
+                margin: 8px 0px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+              }
+              .paomadeng-img{
+                float: left;
+                width: 68px;
+                height: 34px;
+                img{
+                  // width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
       }
+  }
+  //链接图片
+  .link-img-item{
+    height: 125px;
+    background:#e10f02;
+    a{
+      display: block;
+      float: left;
+      width: 50%;
+      height: 125px;
+      background: #ccc;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .items{
+      float: left;
+      width: 50%;
+      height: 125px;
+    }
+  }
+  .link-img-item3{
+    height: 185.5px;
+    a{
+      height: 62.5px;
+    }
   }
 }
 </style>
