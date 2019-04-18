@@ -6,7 +6,8 @@ import Shopping from './views/shopping/shopping.vue'
 import Login from './views/login/login.vue'
 import List from './views/list/list.vue'
 import Message from './views/message/message.vue'
-
+import Redirect from './views/login/redirect_login/redirect_login.vue'
+import Register from './views/login/redirect_login/register.vue'
 Vue.use(Router)
 // 定义路由
 
@@ -32,7 +33,17 @@ export default new Router({
         {
           path: '/login',
           name: 'login',
-          component: Login
+          component: Login,
+        },  
+        {
+          path: '/register',
+          name: 'register',
+          component: Register
+        },
+        {
+          path: '/redirect_login',
+          name: 'redirect',
+          component: Redirect
         },
         {
           path: '/message',
@@ -46,5 +57,6 @@ export default new Router({
         }
       ]
     }
+
   ]
 })
