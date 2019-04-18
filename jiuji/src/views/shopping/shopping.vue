@@ -29,10 +29,27 @@
         <p class="kong-title2"><a href="###">去逛逛</a></p>
       </div> -->
       <!-- 商品列表 -->
-      <div class="sp">
+      <div class="sp clearfix">
         <div class="sp-gouxuan"><van-checkbox v-model="checked" checked-color="red"></van-checkbox></div>
-        <div class="sp-img"><img src="../../img/201809130819230.jpg" alt="" class="tus"> <div></div></div>
-        <div class="sp-number"></div>
+        <div class="sp-right">
+          <div class="sp-img-number clearfix">
+            <div class="sp-img"><img src="../../img/5.jpg" alt=""></div>
+            <div class="sp-number">
+              <p class="sp-title"> 苹果Apple Watch Series 4 铝金属系列GPS+蜂窝数据版 44毫米 银色铝金属 白色运动型</p>
+              <div class="clearfix number">
+                <div class="fl">￥719.00</div>
+                  <div class="fr">
+                    <van-stepper
+                      :value="value"
+                      async-change
+                      @change="onChange"
+                    />
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="serve"></div>
+        </div>
       </div>
 
     </div>
@@ -54,7 +71,8 @@
 export default {
   data () {
     return {
-      checked: true
+      checked: true,
+      value: 1
     }
   },
   methods: {
@@ -62,6 +80,17 @@ export default {
       alert('1212')
     },
     onClickRight () {
+    },
+    onChange (value) {
+      if (this.changing) {
+        return
+      }
+
+      this.changing = true
+      setTimeout(() => {
+        this.value = value
+        this.changing = false
+      }, 500)
     }
   }
 }
@@ -138,7 +167,7 @@ export default {
   }
   // 购物车列表
   .shopping-list{
-    margin: 30px 14px 14px 20px;
+    margin: 30px 14px 14px 14px;
     // padding: 25px 0;
     // background: #fff;
     // box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
@@ -174,13 +203,12 @@ export default {
       }
     }
     .sp{
-      height:70px;
       padding: 10px 0px;
       box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
       .sp-gouxuan{
         width: 20px;
         padding: 0px 15px;
-        height: 100%;
+        height: 70px;
         float: left;
         position: relative;
         .van-checkbox{
@@ -189,12 +217,36 @@ export default {
           transform: translateY(-50%);
         }
       }
-      .sp-img{
+      .sp-right{
         float: left;
-        width:70px;
-        .tus{
+        width: 297px;
+        // background: #f21c1c;
+        .sp-img{
+          width: 70px;
           height: 70px;
-          width: 100%;
+          float: left;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .sp-number{
+          float: left;
+          .sp-title{
+            width:217px;
+            font-size: 13px;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+          }
+          .number{
+            margin-top:10px;
+          }
+        }
+        .serve{
+        padding-left: 50px;
         }
       }
 
