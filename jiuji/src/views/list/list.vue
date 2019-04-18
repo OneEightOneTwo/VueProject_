@@ -36,7 +36,51 @@
         <div class="phone">
           <div class="cate-ad"><img src="../../img/201904150330220.jpg.webp" alt=""></div>
         </div>
-
+        <div class="item">
+          <div class="item_t">
+            <p>
+              热门品牌
+              <span>排行榜</span>
+            </p>
+          </div>
+          <div class="item_c">
+            <li>
+              <a href="javascript:;">
+                <img src alt>
+                <span>苹果</span>
+              </a>
+              <a href="javascript:;">
+                <img src alt>
+                <span>苹果</span>
+              </a>
+              <a href="javascript:;">
+                <img src alt>
+                <span>苹果</span>
+              </a>
+            </li>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item_t">
+            <p>更多品牌</p>
+          </div>
+          <div class="item_c">
+            <li>
+              <a href="javascript:;">
+                <img src alt>
+                <span>苹果</span>
+              </a>
+              <a href="javascript:;">
+                <img src alt>
+                <span>苹果</span>
+              </a>
+              <a href="javascript:;">
+                <img src alt>
+                <span>苹果</span>
+              </a>
+            </li>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -123,4 +167,49 @@ export default {
      }
   }
 }
+
+.item {
+    margin: 15px auto;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);
+    .item_t {
+      padding: 0 10px;
+      p {
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        span {
+          float: right;
+        }
+      }
+    }
+    .item_c {
+      background-color: #fff;
+      a {
+        width: 25%;
+        margin-left: 5px;
+        display: inline-block;
+        img {
+          width: 80%;
+          max-width: 70px;
+          display: block;
+          background-image: url("../../img/apple.jpg");
+          background-position: 50%;
+          background-repeat: no-repeat;
+          background-size: contain;
+          height: 67px;
+        }
+        span {
+          width: 20px;
+          height: 14px;
+          line-height: 14px;
+          text-align: center;
+          font-size: 12px;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
 </style>
