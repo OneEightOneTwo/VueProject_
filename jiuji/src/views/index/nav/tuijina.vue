@@ -360,6 +360,7 @@ export default {
     width: 100%;
     height: 200px;
     padding: 15px;
+    box-sizing: border-box;
     overflow-x: auto;
     overflow-y: hidden;
     .youxuan-box{
@@ -457,6 +458,5 @@ export default {
       }
     }
   }
-
 }
 </style>

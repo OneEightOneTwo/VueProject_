@@ -20,21 +20,30 @@
         </div>
       </div>
     </div>
-    <!-- 购物车空提示 -->
-    <div class="kong">
-      <p class="kong-icon"> <span class="icon icon-gouwuchekong"></span> </p>
-      <p class="kong-title1">购物车什么都没有,快去买点什么吧~</p>
-      <p class="kong-title2"><a href="###">去逛逛</a></p>
+    <!-- 购物车列表 -->
+    <div class="shopping-list">
+      <!-- 购物车空提示 -->
+      <!-- <div class="kong">
+        <p class="kong-icon"> <span class="icon icon-gouwuchekong"></span> </p>
+        <p class="kong-title1">购物车什么都没有,快去买点什么吧~</p>
+        <p class="kong-title2"><a href="###">去逛逛</a></p>
+      </div> -->
+      <!-- 商品列表 -->
+      <div class="sp">
+        <div class="sp-gouxuan"><van-checkbox v-model="checked" checked-color="red"></van-checkbox></div>
+        <div class="sp-img"><img src="../../img/201809130819230.jpg" alt="" class="tus"> <div></div></div>
+        <div class="sp-number"></div>
+      </div>
+
     </div>
     <!-- 热卖推荐 -->
     <div class="rmtj">
       <div class="title-img"><img src="../../img/121212.png" alt=""></div>
       <div class="rmtj-item-box">
         <div class="rmtj-item">
-        <img src="../../img/fx4.jpg" alt="" class="discover-item-img">
-        <p class="title1">专属打造 超长续航</p>
-        <p class="title2">华为畅享9e 全网通版121211111111111111</p>
-        <p class="price">￥719.00</p>
+        <img src="../../img/fx4.jpg" alt="" class="rmtj-itemm-img">
+        <p class="rmtj-item-title1">专属打造 超长续航 专属打造 超长续航专属打造 超长续航专属打造 超长续航专属打造 超长续航专属打造 超长续航</p>
+        <p class="rmtj-item-price"> <span class="price">￥719.00</span> <i class="icon icon-gouwuche1"></i></p>
         </div>
       </div>
     </div>
@@ -43,6 +52,11 @@
 
 <script>
 export default {
+  data () {
+    return {
+      checked: true
+    }
+  },
   methods: {
     onClickLeft () {
       alert('1212')
@@ -122,27 +136,31 @@ export default {
       }
     }
   }
-  // 购物车空提示
-  .kong{
+  // 购物车列表
+  .shopping-list{
     margin: 30px 14px 14px 20px;
-    padding: 25px 0;
-    background: #fff;
-    box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
-    p{
-      text-align: center;
-    }
-    .kong-icon{
+    // padding: 25px 0;
+    // background: #fff;
+    // box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
+    .kong{
+      padding: 25px 0;
+      background: #fff;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
+       p{
+        text-align: center;
+      }
+      .kong-icon{
       color: #eee;
       span{
         font-size: 48px;
       }
-    }
-    .kong-title1{
+      }
+      .kong-title1{
       color: #9c9c9c;
       font-size: 12px;
       margin: 20px 0px;
-    }
-    .kong-title2{
+      }
+      .kong-title2{
       a{
         display: inline-block;
         width: 80px;
@@ -151,6 +169,33 @@ export default {
         line-height: 28px;
         border: 1px solid #9c9c9c;
         border-radius: 28px;
+      }
+
+      }
+    }
+    .sp{
+      height:70px;
+      padding: 10px 0px;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
+      .sp-gouxuan{
+        width: 20px;
+        padding: 0px 15px;
+        height: 100%;
+        float: left;
+        position: relative;
+        .van-checkbox{
+          position:absolute;
+          top:50%;
+          transform: translateY(-50%);
+        }
+      }
+      .sp-img{
+        float: left;
+        width:70px;
+        .tus{
+          height: 70px;
+          width: 100%;
+        }
       }
 
     }
@@ -164,6 +209,59 @@ export default {
         width: 100%;
         height: 100%;
       }
+    }
+    .rmtj-item-box{
+      display: flex;
+      flex-wrap:wrap;
+      justify-content: space-between;
+      align-content:center;
+      padding: 0 12px;
+       .rmtj-item{
+      width: 168px;
+      height: 226px;
+      background: #fff;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
+      border-radius: 3px;
+      .rmtj-itemm-img{
+        display: block;
+        height:150px;
+        width: 150px;
+        margin: 10px auto;
+      }
+      .rmtj-item-title1{
+         height: 32px;
+         width: 100%;
+        line-height: 16px;
+        background: #fff;
+        color: #aaa;
+        padding: 0px 10px;
+        box-sizing: border-box;
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 13px;
+      }
+      .rmtj-item-price{
+        height: 24px;
+        line-height: 24px;
+        font-size: 15px;
+        padding: 5px 15px;
+        .price{
+          color: #f21c1c;
+          float: left;
+        }
+        .icon{
+          font-size:20px;
+          font-weight: 700;
+          color: #999;
+          float: right;
+        }
+      }
+    }
     }
   }
 </style>
