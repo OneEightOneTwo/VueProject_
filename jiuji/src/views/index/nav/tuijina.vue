@@ -83,6 +83,75 @@
       <a href="###"> <img src="../../../img/youxuan1.jpg.webp" alt=""></a>
     </div>
   </div>
+  <!-- 为你优选 -->
+  <div class="headline"> <img src="../../../img/title1.jpg.webp" alt=""></div>
+  <div class="youxuan">
+    <div class="youxuan-box">
+      <div class="youxuan-box-item">
+       <img src="../../../img/title1.jpg.webp" alt="" class="youxuan-img">
+        <p class="youxuan-zhonglei">触宝 苹果iPhone 6/6s 2.5D钢化膜</p>
+        <p class="youxuan-jieshao">高清高透 防刮耐磨</p>
+        <p class="youxuan-price">￥5080.00</p>
+      </div>
+    </div>
+  </div>
+  <!-- 手机精品 -->
+  <div class="headline"><img src="../../../img/title2.webp" alt=""></div>
+  <div class="line-img">
+    <div class="link-img-item">
+      <a href="###"> <img src="../../../img/linkimg1.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg1.png.webp" alt=""></a>
+    </div>
+    <div class="link-img-item">
+      <a href="###"> <img src="../../../img/linkimg4.jpg.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg5.jpg.webp" alt=""></a>
+    </div>
+    <div class="link-img-item link-img-item3" style="height:125px">
+      <a href="###"> <img src="../../../img/linkimg6.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg7.jpg.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg8.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg9.png.webp" alt=""></a>
+    </div>
+  </div>
+  <!-- 办公专家 -->
+  <div class="headline"><img src="../../../img/title3.webp" alt=""></div>
+  <div class="line-img">
+    <div class="link-img-item">
+      <a href="###"> <img src="../../../img/linkimg1.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg1.png.webp" alt=""></a>
+    </div>
+    <div class="link-img-item">
+      <a href="###"> <img src="../../../img/linkimg4.jpg.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg5.jpg.webp" alt=""></a>
+    </div>
+  </div>
+    <!-- 智能生活 -->
+  <div class="headline"><img src="../../../img/title4.webp" alt=""></div>
+  <div class="line-img">
+    <div class="link-img-item">
+     <div class="items">
+       <a href=""> <img src="../../../img/linkimg2.png.webp" alt=""></a>
+       <a href=""> <img src="../../../img/linkimg3.png.webp" alt=""></a>
+     </div>
+       <a href="###"> <img src="../../../img/linkimg1.png.webp" alt=""></a>
+    </div>
+    <div class="link-img-item link-img-item3" style="height:62.5px">
+      <a href="###"> <img src="../../../img/linkimg6.png.webp" alt=""></a>
+      <a href="###"> <img src="../../../img/linkimg7.jpg.webp" alt=""></a>
+    </div>
+  </div>
+  <!-- 发现好货 -->
+  <div class="headline"><img src="../../../img/title5.webp" alt=""></div>
+  <div class="discover">
+    <div class="discover-item">
+      <img src="../../../img/fx4.jpg" alt="" class="discover-item-img">
+      <p class="title1">专属打造 超长续航</p>
+      <p class="title2">华为畅享9e 全网通版121211111111111111</p>
+      <p class="price">￥719.00</p>
+    </div>
+    <div class="discover-item"></div>
+    <div class="discover-item"></div>
+  </div>
 </div>
 </template>
 
@@ -91,6 +160,7 @@ export default {
   data () {
     return {
       images: [
+        // 轮播图图片
         require('../../../img/banner1.jpg.webp'),
         require('../../../img/banner2.jpg.webp')
       ]
@@ -277,5 +347,116 @@ export default {
       height: 62.5px;
     }
   }
+  // 所有图片标题共用样式标题 headline
+  .headline{
+    height: 44px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  // 左右产品展示
+  .youxuan{
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .youxuan-box{
+      height: 200px;
+      .youxuan-box-item{
+          width: 140px;
+          height: 200px;
+          margin-right: 10px;
+          padding: 10px;
+          box-shadow: 0 0 10px #e1e1e1;
+          border-radius: 3px;
+          box-sizing: border-box;
+      }
+    }
+  }
+  .youxuan-img{
+    display: block;
+    width: 100%;
+    height: 120px;
+  }
+  .youxuan-zhonglei{
+    margin-top: 3px;
+    width: 100%;
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    color: #333;
+  }
+  .youxuan-jieshao{
+     margin-top: 3px;
+    width: 100%;
+    height: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    color: #9c9c9c;
+  }
+  .youxuan-price{
+    height: 14px;
+    font-size: 12px;
+    color: #f21c1c;
+  }
+  .discover{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content:center;
+     padding: 0 12px;
+    .discover-item{
+      width: 168px;
+      height: 246px;
+      background: #fff;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      box-shadow: 0 2px 10px 0 rgba(0,0,0,.08);
+      border-radius: 3px;
+      .discover-item-img{
+        display: block;
+        height:150px;
+        width: 150px;
+        margin: 10px auto;
+      }
+      .title1{
+        background: #ebf6fe;
+        color: #87acd8;
+        padding: 5px 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 13px;
+      }
+      .title2{
+        font-size: 13px;
+        color: #333;
+        padding: 5px 15px;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .price{
+        color: #f21c1c;
+        font-size: 15px;
+        padding: 5px 15px;
+      }
+    }
+  }
+
 }
 </style>

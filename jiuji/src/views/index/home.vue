@@ -1,7 +1,8 @@
 <template>
   <div>
     <router-view/>
-    <van-tabbar v-model="active" active-color="red">
+    <div class="home">
+      <van-tabbar v-model="active" active-color="red">
       <van-tabbar-item>
         <span>首页</span>
         <i slot="icon" class="icon icon-shouye1"></i>
@@ -23,6 +24,7 @@
         <i slot="icon" class="icon icon-iconfuzhi"></i>
       </van-tabbar-item>
     </van-tabbar>
+    </div>
   </div>
 </template>
 <script>

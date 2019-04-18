@@ -14,4 +14,7 @@ export default {
   margin: 0;
   padding: 0;
 }
+#app{
+  padding-bottom: 50px;
+}
 </style>
