@@ -1,12 +1,19 @@
 <template>
     <div class="register">
         <!-- header -->
-        <div class="header_reg" >
+        <!-- <div class="header_reg" >
             <van-row>
-            <van-col span="3" :style="con" ><i class="icon icon-tubiaozhizuo-" @click="onClickLeft"></i></van-col>
+            <van-col span="3" ><i class="icon icon-tubiaozhizuo-" @click="onClickLeft"></i></van-col>
             <van-col span="18"  v-text="name" :style="style"></van-col>
             <van-col span="3" :style="con" ><i class="icon icon-gengduo2" @click="onClickRight"></i></van-col>
             </van-row>
+        </div> -->
+        <div class="header_reg">
+          <van-row>
+            <van-col span="3"><van-icon name="arrow-left"  :style="con"/></van-col>
+            <van-col span="18" v-text="name" :style="style"></van-col>
+            <van-col span="3"><van-icon name="ellipsis" :style="con" /></van-col>
+          </van-row>
         </div>
         <!-- 输入栏 -->
         <div class="wrapper">
@@ -35,7 +42,7 @@
             <span>我已阅读并同意<a href="javascript:;">《九机网用户协议》</a></span>
         </div>
         <div class="button">
-            <van-button  :disabled="bool" >下一步</van-button>
+            <van-button  :disabled="bool" size="large" >下一步</van-button>
         </div>
         
       
@@ -57,11 +64,16 @@ export default {
       style: {
         fontSize: "17px",
         textAlign: "center",
-        lineHeight: "44px"
+        lineHeight: "48px"
       },
       con: {
-        lineHeight: "44px",
-        textAlign: "center"
+        lineHeight: "48px",
+        textAlign: "center",
+        display: "inline-block",
+        width: "46px",
+        height: "48px",
+        fontSize: "20px",
+        fontWeight: "bold"
       },
       change: {
         display: "inline-block"

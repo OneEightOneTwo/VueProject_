@@ -6,6 +6,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 import './style/iconfont.css'
 import './style/bese.css'
+
 Vue.use(Vant)
 Vue.config.productionTip = false
 // 往app中注入路由

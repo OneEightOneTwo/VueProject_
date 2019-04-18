@@ -1,12 +1,19 @@
 <template>
     <!-- 头部 -->
     <div>
-        <div class="header">
+        <!-- <div class="header">
             <van-row>
             <van-col span="3" :style="con"><i class="icon icon-tubiaozhizuo-" ></i></van-col>
             <van-col span="18"  v-text="name" :style="style"></van-col>
             <van-col span="3" :style="con"><i class="icon icon-gengduo2" ></i></van-col>
             </van-row>
+        </div> -->
+        <div class="header">
+          <van-row>
+            <van-col span="3"><van-icon name="arrow-left"  :style="con"/></van-col>
+            <van-col span="18" v-text="name" :style="style"></van-col>
+            <van-col span="3"><van-icon name="ellipsis" :style="con" /></van-col>
+          </van-row>
         </div>
         <div>
             <van-tabs>
@@ -114,8 +121,13 @@ export default {
         lineHeight: "44px"
       },
       con: {
-        lineHeight: "44px",
-        textAlign: "center"
+        lineHeight: "48px",
+        textAlign: "center",
+        display: "inline-block",
+        width: "46px",
+        height: "48px",
+        fontSize: "20px",
+        fontWeight: "bold"
       },
       yuanjin: {
         margin: "0 15px"
