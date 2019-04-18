@@ -9,6 +9,9 @@ import List from './views/list/list.vue'
 import Message from './views/message/message.vue'
 import Redirect from './views/login/redirect_login/redirect_login.vue'
 import Register from './views/login/redirect_login/register.vue'
+// 搜suo组件
+import Search from './views/search/search.vue'
+
 // 首页nav组件
 import Shoujikuaixiu from './views/index/nav/shoujikuaixiu.vue'
 import Toutiao from './views/index/nav/toutiao.vue'
@@ -69,8 +72,8 @@ export default new Router({
         {
           path: '/login',
           name: 'login',
-          component: Login,
-        },  
+          component: Login
+        },
         {
           path: '/register',
           name: 'register',
@@ -90,9 +93,13 @@ export default new Router({
           path: '/list',
           name: 'list',
           component: List
+        },
+        {
+          path: '/search',
+          name: 'list',
+          component: Search
         }
       ]
     }
-
   ]
 })
