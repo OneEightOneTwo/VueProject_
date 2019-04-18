@@ -1,7 +1,6 @@
 <template>
   <div>
     <van-search
-      v-model="value"
       placeholder="iphone xs Max"
       shape="round"
       @search="onSearch"
@@ -15,6 +14,24 @@
     </div>
     <div class="main">
       <div class="main_l">
+        <van-badge-group :active-key="activeKey" @change="onChange">
+          <van-badge title="手机通讯"/>
+          <van-badge title="手机配件"/>
+          <van-badge title="电脑办公"/>
+          <van-badge title="平板电脑"/>
+          <van-badge title="路由器"/>
+          <van-badge title="智能穿戴"/>
+          <van-badge title="数码影音"/>
+          <van-badge title="智能家居"/>
+          <van-badge title="智能出行"/>
+          <van-badge title="儿童专区"/>
+          <van-badge title="娱乐竞技"/>
+          <van-badge title="智能健康"/>
+          <van-badge title="二手良品"/>
+        </van-badge-group>
+      </div>
+
+      <!-- <div class="main_l">
         <p class="red" >手机通讯</p>
         <p>手机配件</p>
         <p>电脑办公</p>
@@ -28,7 +45,7 @@
         <p>娱乐竞技</p>
         <p>智能健康</p>
         <p>二手良品</p>
-      </div>
+      </div>-->
       <div class="main_r">
         <div>
           <a href="javascript:;">
@@ -61,9 +78,7 @@
         </div>
         <div class="item">
           <div class="item_t">
-            <p>
-              更多品牌
-            </p>
+            <p>更多品牌</p>
           </div>
           <div class="item_c">
             <li>
@@ -89,20 +104,22 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      value: "",
-      active: 0
-    };
+      active: 0,
+      activeKey: 0
+    }
   },
   methods: {
-    onSearch() {},
-    onCancel() {}
-  },
-  watch: {
-    active(index) {}
+    onSearch() {
+    },
+    onCancel() {
+    },
+    onChange(key) {
+      this.activeKey = key
+    }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -137,26 +154,33 @@ export default {
   border: 0px;
 }
 
-.main{
+.main {
   border-top: 1px solid #f5f5f5;
 }
-.main_l {
+
+.main_l{
+  width: 160px;
+  margin-left: 10px;
+}
+.van-hairline {
   float: left;
   background: #f5f5f5;
   margin-left: 10px;
   overflow: auto;
-  p {
-    width: 150px;
+  width: 160px;
+  a {
+    width: 160px;
     height: 50px;
     line-height: 50px;
     text-align: center;
     margin: 0;
     color: #333;
+    display: block;
   }
-  p.red {
-    color: red;
-    background: #fff;
-  }
+}
+
+.van-badge__text{
+  text-align: center;
 }
 
 .main_r {
@@ -178,7 +202,6 @@ export default {
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: contain;
-        vertical-align: top;
       }
     }
   }
@@ -216,7 +239,7 @@ export default {
           background-size: contain;
           height: 70px;
         }
-        span{
+        span {
           width: 24px;
           height: 14px;
           line-height: 14px;
