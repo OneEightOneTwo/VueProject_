@@ -126,6 +126,8 @@ export default {
             padding: 0;
             font-size: 20px;
             color: #fff;
+            left: 0;
+            top: 0;
           }
         }
       .header-r {

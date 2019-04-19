@@ -95,6 +95,11 @@ export default new Router({
           path: '/list',
           name: 'list',
           component: List
+        },
+        {
+          path: '/details',
+          name: 'details',
+          component: Details
         }
       ]
     },
