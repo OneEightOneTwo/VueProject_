@@ -112,7 +112,6 @@ export default {
         lineHeight: '44px'
       },
       con: {
-<<<<<<< HEAD
         lineHeight: "48px",
         textAlign: "center",
         display: "inline-block",
@@ -120,10 +119,6 @@ export default {
         height: "48px",
         fontSize: "20px",
         fontWeight: "bold"
-=======
-        lineHeight: '44px',
-        textAlign: 'center'
->>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
       },
       yuanjin: {
         margin: '0 15px'

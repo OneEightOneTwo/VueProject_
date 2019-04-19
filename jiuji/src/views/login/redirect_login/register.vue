@@ -3,11 +3,7 @@
         <!-- header -->
         <!-- <div class="header_reg" >
             <van-row>
-<<<<<<< HEAD
             <van-col span="3" ><i class="icon icon-tubiaozhizuo-" @click="onClickLeft"></i></van-col>
-=======
-            <van-col span="3" :style="con" ><i class="icon icon-tubiaozhizuo-" @click="$router.go(-1)"></i></van-col>
->>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
             <van-col span="18"  v-text="name" :style="style"></van-col>
             <van-col span="3" :style="con" ><i class="icon icon-gengduo2"></i></van-col>
             </van-row>
@@ -65,7 +61,6 @@ export default {
       //   img: require("../../../assets/reg_1.jpg"),
       img: '',
       style: {
-<<<<<<< HEAD
         fontSize: "17px",
         textAlign: "center",
         lineHeight: "48px"
@@ -78,15 +73,6 @@ export default {
         height: "48px",
         fontSize: "20px",
         fontWeight: "bold"
-=======
-        fontSize: '17px',
-        textAlign: 'center',
-        lineHeight: '44px'
-      },
-      con: {
-        lineHeight: '44px',
-        textAlign: 'center'
->>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
       },
       change: {
         display: 'inline-block'

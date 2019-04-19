@@ -17,12 +17,7 @@
         <div class="reg-top">
           <a href="javascript:;" class="account-img" ><img src="../../assets/usericon.png" alt=""></a>
           <div class="register">
-<<<<<<< HEAD
-            <a href="javascript:;">登录</a><span>
-              |</span><a href="javascript:;" >注册</a>  
-=======
             <a href="javascript:;" @click="$router.push({path: '/redirect_login'})">登录</a><span>|</span><a href="javascript:;" @click="$router.push({path: '/register'})">注册</a>
->>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
           </div>
         </div>
         <div class="reg-bottom">
@@ -97,22 +92,14 @@
               <a href=""><img src="../../assets/ct_help.png" alt=""><span>帮助中心</span></a>
             </div>
         </div>
-<<<<<<< HEAD
-    </div> 
-=======
     </div>
->>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
  </div>
 </template>
 <script>
 export default {
-<<<<<<< HEAD
- 
-=======
   methods: {
 
   }
->>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
 }
 </script>
 
