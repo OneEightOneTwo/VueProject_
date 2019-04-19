@@ -93,13 +93,14 @@ export default new Router({
           path: '/list',
           name: 'list',
           component: List
-        },
-        {
-          path: '/search',
-          name: 'list',
-          component: Search
         }
       ]
+    },
+    // 跳到空白无home的新路由
+    {
+      path: '/search',
+      name: 'list',
+      component: Search
     }
   ]
 })

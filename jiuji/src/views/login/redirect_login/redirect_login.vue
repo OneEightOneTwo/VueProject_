@@ -3,7 +3,7 @@
     <div>
         <div class="header">
             <van-row>
-            <van-col span="3" :style="con"><i class="icon icon-tubiaozhizuo-" ></i></van-col>
+            <van-col span="3" :style="con"><i class="icon icon-tubiaozhizuo-" @click="$router.go(-1)"></i></van-col>
             <van-col span="18"  v-text="name" :style="style"></van-col>
             <van-col span="3" :style="con"><i class="icon icon-gengduo2" ></i></van-col>
             </van-row>
@@ -15,20 +15,20 @@
                     <div class="login">
                         <van-cell-group>
                             <van-field
-                                v-model="username"    
+                                v-model="username"
                                 left-icon="contact"
-                                placeholder="用户名/手机号"       
-                                clearable       
+                                placeholder="用户名/手机号"
+                                clearable
                             />
                             <van-field
                                 v-model="password"
                                 type="password"
                                 placeholder="请输入密码"
                                 left-icon="lock"
-                                clearable               
+                                clearable
                             />
                         </van-cell-group>
-                    </div>       
+                    </div>
                 </van-tab>
                  <van-tab>
                     <div slot="title" >短信验证码登陆</div>
@@ -46,12 +46,12 @@
                                     type="password"
                                     placeholder="动态密码"
                                     left-icon="lock"
-                                    class="psw"  
-                                    clearable 
-                                   
+                                    class="psw"
+                                    clearable
+
                                 > <van-button slot="button" size="small" type="primary" >发送验证码</van-button>
                                 </van-field>
-                               
+
                             </van-cell-group>
                     </div>
                 </van-tab>
@@ -64,7 +64,7 @@
         </div>
         <!-- 登陆按钮 -->
         <div class="btn">
-            <van-button size="large" :style="color" :disabled="bool">登录</van-button>
+            <van-button size="large" :style="color" @click="sacas">登录</van-button>
         </div>
         <!-- loginIn losePassword -->
         <div class="l_lose">
@@ -78,83 +78,82 @@
         </div>
         <div>
 
-
-
         </div>
     </div>
-    
-   
-           
-     
-    
-        
+
 </template>
-
-
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      username: "",
-      password: "",
-      usernames: "",
-      passwords: "",
+      username: '',
+      password: '',
+      usernames: '',
+      passwords: '',
       bool: true,
-      name: "登录",
-      status: "三个月免登录",
+      name: '登录',
+      status: '三个月免登录',
       checked: true,
       color: {
-        background: "#dfdfdf",
-        color: "#fff"
+        background: '#dfdfdf',
+        color: '#fff'
       },
       style: {
-        fontSize: "17px",
-        textAlign: "center",
-        lineHeight: "44px"
+        fontSize: '17px',
+        textAlign: 'center',
+        lineHeight: '44px'
       },
       con: {
-        lineHeight: "44px",
-        textAlign: "center"
+        lineHeight: '44px',
+        textAlign: 'center'
       },
       yuanjin: {
-        margin: "0 15px"
+        margin: '0 15px'
       }
-    };
+    }
+  },
+  methods: {
+    sacas () {
+      this.axios.post('/login', {
+        username: this.username,
+        password: this.password
+      }).then(console.log)
+    }
   },
   watch: {
-    username() {
+    username () {
       if (this.username.length > 0 && this.password.length > 0) {
-        this.bool = false;
+        this.bool = false
       } else {
-        this.bool = true;
+        this.bool = true
       }
     },
-    password() {
+    password () {
       if (this.username.length > 0 && this.password.length > 0) {
-        this.bool = false;
+        this.bool = false
       } else {
-        this.bool = true;
+        this.bool = true
       }
     },
-    usernames() {
+    usernames () {
       if (this.usernames.length > 0 && this.passwords.length > 0) {
-        this.bool = false;
+        this.bool = false
       } else {
-        this.bool = true;
+        this.bool = true
       }
     },
-    passwords() {
+    passwords () {
       if (this.usernames.length > 0 && this.passwords.length > 0) {
-        this.bool = false;
+        this.bool = false
       } else {
-        this.bool = true;
+        this.bool = true
       }
-    },
-    
-  },
- 
-};
+    }
+
+  }
+
+}
 </script>
 <style lang="scss" >
 .fl {
@@ -225,6 +224,3 @@ export default {
   }
 }
 </style>
-
-
-

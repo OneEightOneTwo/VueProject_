@@ -1,14 +1,11 @@
 <template>
- <div class="jiujiu">   
+ <div class="jiujiu">
    <!-- 头部 -->
    <div class="header">
       <div class="header-title ">
           <div class="header-l">
-            <a href="">
-              <i class="icon icon-tubiaozhizuo-"></i>
-              <!-- <span class=""></span> -->
-            </a>  
-          </div>       
+            <i class="icon icon-tubiaozhizuo-" @click="$router.replace({path: '/'})"></i>
+          </div>
           <div class="header-r ">
             <i class="icon icon-shezhi set"></i><span>设置</span>
           </div>
@@ -20,7 +17,7 @@
         <div class="reg-top">
           <a href="javascript:;" class="account-img" ><img src="../../assets/usericon.png" alt=""></a>
           <div class="register">
-            <a href="javascript:;" @click="routeTo('/register')">登录</a><span>|</span><a href="javascript:;">注册</a>  
+            <a href="javascript:;" @click="$router.push({path: '/redirect_login'})">登录</a><span>|</span><a href="javascript:;" @click="$router.push({path: '/register'})">注册</a>
           </div>
         </div>
         <div class="reg-bottom">
@@ -95,13 +92,17 @@
               <a href=""><img src="../../assets/ct_help.png" alt=""><span>帮助中心</span></a>
             </div>
         </div>
-       
-     
-
     </div>
-   
  </div>
 </template>
+<script>
+export default {
+  methods: {
+
+  }
+}
+</script>
+
 <style lang="scss">
 .clearfix {
   clear: both;
@@ -121,7 +122,7 @@
       .header-l {
         float: left;
         height: 44px;
-        
+
         a{
           display: block;
           height: 44px;
@@ -260,6 +261,6 @@
       }
     }
   }
- 
+
 }
 </style>
