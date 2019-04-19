@@ -9,6 +9,7 @@ import List from './views/list/list.vue'
 import Message from './views/message/message.vue'
 import Redirect from './views/login/redirect_login/redirect_login.vue'
 import Register from './views/login/redirect_login/register.vue'
+import Details from './views/details/details.vue'
 // 搜分类跳到点击分类搜索搜索组件
 import Search from './views/search/search.vue'
 // 点击搜索路由
