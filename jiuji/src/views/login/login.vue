@@ -2,7 +2,7 @@
  <div class="jiujiu">   
    <!-- 头部 -->
    <div class="header">
-      <div class="header-title ">
+      <div class="header-title">
           <div class="header-l">
             <a href="">
               <i class="icon icon-tubiaozhizuo-"></i>
@@ -20,7 +20,8 @@
         <div class="reg-top">
           <a href="javascript:;" class="account-img" ><img src="../../assets/usericon.png" alt=""></a>
           <div class="register">
-            <a href="javascript:;" @click="routeTo('/register')">登录</a><span>|</span><a href="javascript:;">注册</a>  
+            <a href="javascript:;">登录</a><span>
+              |</span><a href="javascript:;" >注册</a>  
           </div>
         </div>
         <div class="reg-bottom">
@@ -95,13 +96,15 @@
               <a href=""><img src="../../assets/ct_help.png" alt=""><span>帮助中心</span></a>
             </div>
         </div>
-       
-     
-
-    </div>
-   
+    </div> 
  </div>
 </template>
+<script>
+export default {
+ 
+}
+</script>
+
 <style lang="scss">
 .clearfix {
   clear: both;
@@ -128,11 +131,12 @@
           width: 44px;
           text-align: center;
           i{
-            display: block;
             font-size: 20px;
             height: 44px;
             width: 44px;
             color: #fff;
+            left: 0;
+            top: 0;
           }
         }
       }

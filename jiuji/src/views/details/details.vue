@@ -4,10 +4,10 @@
             <div class="header">
             <van-row>
                 <van-col span="3" :style="header_l"><van-icon name="arrow-left"  :style="con"/></van-col>
-                    <div :style="header" class="headerThree" >
+                    <div :style="header" class="headerThree"  >
                         <a href="javascript:;" v-for="(item,index) in comment" 
                         v-text="item.name" :start="index" :start2="startIndex" @click="check(index)" 
-                        :class="{'bottom_border': startIndex == index}"></a>
+                        :class="{'bottom_border': startIndex == index}" ></a>
                         
                         <!-- <a href="javascript:;">评论</a>
                         <a href="javascript:;">详情</a> -->
@@ -18,28 +18,32 @@
             </div>
             <!-- 轮播图 -->
             <div class="screenPic" :style="sPricture">
-              <van-swipe @change="onChange">
-                <div>
-                  <van-swipe-item><img src="https://img2.ch999img.com/pic/product/440x440/20190327003931245.jpg.webp" alt=""></van-swipe-item>
+              <van-swipe @change="onChange" >
+                <div v-for="(item,index) in swiperData">
+                  <van-swipe-item><img :src="item" alt=""  @click="swiperImgClick(index)"></van-swipe-item>
                   <!-- <van-swipe-item><img src="https://img2.ch999img.com/pic/product/440x440/20190327003932213.jpg.webp" alt=""></van-swipe-item>
                   <van-swipe-item><img src="https://img2.ch999img.com/pic/product/440x440/20190327003933213.jpg.webp" alt=""></van-swipe-item>
                   <van-swipe-item><img src="https://img2.ch999img.com/pic/product/440x440/20190410182904201.jpg.webp" alt=""></van-swipe-item>
                   <van-swipe-item><img src="https://img2.ch999img.com/pic/product/440x440/20190410182905167.jpg.webp" alt=""></van-swipe-item> -->
                 </div>
-                <div v-for="(item,index) in cell" v-text="item.name" :style="screen_three" @click="swipeTo(index)"> 
+                
+              </van-swipe>
+              <div v-for="(item,index) in cell" v-text="item.name" :style="screen_three" > 
                 </div>
                 <div class="custom-indicator" slot="indicator" :style="screen_three" >
                     {{ current + 1 }}/5 
                </div>
-              </van-swipe>
-              
                 <!-- <div class="custom-indicator" slot="indicator" class="photo">
                    
                   </div>
                   <div class="custom-indicator" slot="indicator" class="nowPai">
                    
                   </div> -->
+                  
             </div>
+            <!-- <div>
+              <input type="button" value="tijiao" @click="swiperImgClick()">
+            </div> -->
    </div>
 </template>
 <style lang="scss">
@@ -69,14 +73,15 @@
 </style>
 
 <script>
+import { ImagePreview } from 'vant';
 export default {
   data() {
     return {
-      swiperData: [{https://img2.ch999img.com/pic/product/440x440/20190327003931245.jpg.webp},
-      {https://img2.ch999img.com/pic/product/440x440/20190327003932213.jpg.webp},
-      {https://img2.ch999img.com/pic/product/440x440/20190327003933213.jpg.webp},
-      {https://img2.ch999img.com/pic/product/440x440/20190410182904201.jpg.webp},
-      {https://img2.ch999img.com/pic/product/440x440/20190410182905167.jpg.webp},
+      swiperData: [ "https://img2.ch999img.com/pic/product/440x440/20190327003931245.jpg.webp",
+      "https://img2.ch999img.com/pic/product/440x440/20190327003932213.jpg.webp",
+       "https://img2.ch999img.com/pic/product/440x440/20190327003933213.jpg.webp",
+      "https://img2.ch999img.com/pic/product/440x440/20190410182904201.jpg.webp",
+       "https://img2.ch999img.com/pic/product/440x440/20190410182905167.jpg.webp",
       ],
       comment: [{ name: "商品" }, { name: "评论" }, { name: "详情" }],
       //轮播图
@@ -129,14 +134,27 @@ export default {
     //   this.$toast(title + "已被禁用");
     // },
     check(index) {
-      console.log(index);
+      // console.log(index);
       this.startIndex = index;
       if (this.startIndex == index) {
       }
     },
     onChange(index) {
       this.current = index;
+    },
+    swiperImgClick(index){
+      // ImagePreview(this.swiperData);
+      ImagePreview({
+        images:this.swiperData,
+        startPosition: index,
+        onClose() {
+          // do something
+        }
+});
+
+      
     }
+    
   }
 };
 </script>
