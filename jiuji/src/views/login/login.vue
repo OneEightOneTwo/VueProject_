@@ -2,7 +2,7 @@
  <div class="jiujiu">
    <!-- 头部 -->
    <div class="header">
-      <div class="header-title ">
+      <div class="header-title clearfix">
           <div class="header-l">
             <i class="icon icon-tubiaozhizuo-" @click="$router.replace({path: '/'})"></i>
           </div>
@@ -111,32 +111,23 @@ export default {
   position: relative;
   .header {
     background: url(../../assets/accountTop.jpg);
-    // height: 80px;
 
     .header-title {
       height: 44px;
       color: white;
       line-height: 44px;
-      height: 44px;
-      // position: fixed;
       .header-l {
         float: left;
-        height: 44px;
-
-        a{
-          display: block;
-          height: 44px;
-          width: 44px;
-          text-align: center;
+        width: 44px;
+        text-align: center;
           i{
             display: block;
+            margin: 0;
+            padding: 0;
             font-size: 20px;
-            height: 44px;
-            width: 44px;
             color: #fff;
           }
         }
-      }
       .header-r {
         float: right;
         .set {

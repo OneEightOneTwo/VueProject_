@@ -8,6 +8,7 @@
       shape="round"
       @search="onSearch"
       @cancel="onCancel"
+      @click="sousuo"
     >
     </van-search>
     <!-- 导航栏 -->
@@ -36,6 +37,9 @@ export default {
     onSearch () {
     },
     onCancel () {
+    },
+    sousuo () {
+      this.$router.push({ path: 'search' })
     }
   },
   watch: {

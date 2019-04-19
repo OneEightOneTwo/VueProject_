@@ -6,12 +6,13 @@
         shape="round"
         @search="onSearch"
         @cancel="onCancel"
+        @click="sousuo"
       ></van-search>
     <div>
-      <i slot="icon" class="icon icon-tubiaozhizuo-" @click="$router.replace({path: '/'})"></i>
+      <i slot="icon" class="icon icon-tubiaozhizuo- list-zuo" @click="$router.replace({path: '/'})"></i>
     </div>
     <div>
-      <span class="icon iconfont icon-gengduo1"></span>
+      <span class="icon iconfont icon-gengduo1 list-you"></span>
     </div>
     </div>
     <div class="main">
@@ -101,6 +102,9 @@ export default {
     },
     onChange (key) {
       this.activeKey = key
+    },
+    sousuo () {
+      this.$router.push({ path: 'search' })
     }
   }
 }
@@ -117,16 +121,16 @@ export default {
       .van-cell {
         font-size: 14px;
         font-weight: 600;
-        color: #009 !important;
       }
     }
   }
-  .icon-tubiaozhizuo- {
+  .list-zuo {
     position: absolute;
     left: 10px;
     top: 13px;
+    font-size:22px;
   }
-  .icon-gengduo1 {
+  .list-you {
     position: absolute;
     right: 15px;
     top: 13px;

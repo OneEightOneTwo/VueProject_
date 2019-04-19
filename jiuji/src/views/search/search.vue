@@ -8,10 +8,10 @@
         @cancel="onCancel"
       ></van-search>
     <div>
-      <i slot="icon" class="icon icon-tubiaozhizuo-" @click="$router.go(-1)"></i>
+      <i slot="icon" class="icon icon-tubiaozhizuo- list-zuo" @click="$router.go(-1)"></i>
     </div>
     <div>
-      <span class="icon iconfont icon-gengduo1"></span>
+      <span class="icon iconfont icon-gengduo1 list-you"></span>
     </div>
   </div>
   <div class="hot">

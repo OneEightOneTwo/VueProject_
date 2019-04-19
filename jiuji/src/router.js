@@ -9,8 +9,10 @@ import List from './views/list/list.vue'
 import Message from './views/message/message.vue'
 import Redirect from './views/login/redirect_login/redirect_login.vue'
 import Register from './views/login/redirect_login/register.vue'
-// 搜suo组件
+// 搜分类跳到点击分类搜索搜索组件
 import Search from './views/search/search.vue'
+// 点击搜索路由
+import Listsearch from './views/listsearch/listsearch.vue'
 
 // 首页nav组件
 import Shoujikuaixiu from './views/index/nav/shoujikuaixiu.vue'
@@ -99,8 +101,13 @@ export default new Router({
     // 跳到空白无home的新路由
     {
       path: '/search',
-      name: 'list',
+      name: 'search',
       component: Search
+    },
+    {
+      path: '/listsearch',
+      name: 'list',
+      component: Listsearch
     }
   ]
 })
