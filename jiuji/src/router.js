@@ -9,7 +9,13 @@ import List from './views/list/list.vue'
 import Message from './views/message/message.vue'
 import Redirect from './views/login/redirect_login/redirect_login.vue'
 import Register from './views/login/redirect_login/register.vue'
+<<<<<<< HEAD
 import Details from './views/details/details.vue'
+=======
+// 搜suo组件
+import Search from './views/search/search.vue'
+
+>>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
 // 首页nav组件
 import Shoujikuaixiu from './views/index/nav/shoujikuaixiu.vue'
 import Toutiao from './views/index/nav/toutiao.vue'
@@ -70,8 +76,8 @@ export default new Router({
         {
           path: '/login',
           name: 'login',
-          component: Login,
-        },  
+          component: Login
+        },
         {
           path: '/register',
           name: 'register',
@@ -98,7 +104,12 @@ export default new Router({
           component: Details
         }
       ]
+    },
+    // 跳到空白无home的新路由
+    {
+      path: '/search',
+      name: 'list',
+      component: Search
     }
-
   ]
 })

@@ -3,9 +3,13 @@
         <!-- header -->
         <!-- <div class="header_reg" >
             <van-row>
+<<<<<<< HEAD
             <van-col span="3" ><i class="icon icon-tubiaozhizuo-" @click="onClickLeft"></i></van-col>
+=======
+            <van-col span="3" :style="con" ><i class="icon icon-tubiaozhizuo-" @click="$router.go(-1)"></i></van-col>
+>>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
             <van-col span="18"  v-text="name" :style="style"></van-col>
-            <van-col span="3" :style="con" ><i class="icon icon-gengduo2" @click="onClickRight"></i></van-col>
+            <van-col span="3" :style="con" ><i class="icon icon-gengduo2"></i></van-col>
             </van-row>
         </div> -->
         <div class="header_reg">
@@ -21,20 +25,20 @@
                 <div class="reg_con">
                     <van-icon name="phone" />
                     <input type="text" placeholder="手机号码" v-model="phoneNum">
-                </div>   
+                </div>
                 <div class="reg_con">
                     <van-icon name="photo" />
                     <input type="text" placeholder="图片验证码" v-model="picNum">
                     <div :style="change" @click="chang_pic" >
-                        <img :src="img" > 
-                    </div>  
-                </div> 
+                        <img :src="img" >
+                    </div>
+                </div>
                 <div class="reg_con">
                     <van-icon name="lock" />
                     <input type="text" placeholder="短信验证码" v-model="checkNum">
                     <input type="button" value="发送" class="btn">
-                </div> 
-            </div>    
+                </div>
+            </div>
         </div>
         <!-- 同意 -->
         <div class="agree">
@@ -44,24 +48,24 @@
         <div class="button">
             <van-button  :disabled="bool" size="large" >下一步</van-button>
         </div>
-        
-      
+
     </div>
 </template>
 <script>
 export default {
-  data() {
+  data () {
     return {
       phoneNum: '',
       picNum: '',
       checkNum: '',
-      bool:true,
+      bool: true,
       checked: true,
-      name: "用户注册",
-      numSize:"10px",
+      name: '用户注册',
+      numSize: '10px',
       //   img: require("../../../assets/reg_1.jpg"),
-      img: "",
+      img: '',
       style: {
+<<<<<<< HEAD
         fontSize: "17px",
         textAlign: "center",
         lineHeight: "48px"
@@ -74,61 +78,69 @@ export default {
         height: "48px",
         fontSize: "20px",
         fontWeight: "bold"
+=======
+        fontSize: '17px',
+        textAlign: 'center',
+        lineHeight: '44px'
+      },
+      con: {
+        lineHeight: '44px',
+        textAlign: 'center'
+>>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
       },
       change: {
-        display: "inline-block"
+        display: 'inline-block'
       }
-    };
+    }
   },
   methods: {
-    onClickLeft() {
-      console.log(666);
+    onClickLeft () {
+      console.log(666)
     },
-    onClickRight() {
-      console.log(55);
+    onClickRight () {
+      console.log(55)
     },
-    chang_pic() {
-      var num = Math.random() * 1000;
-      this.imgUrl(num);
+    chang_pic () {
+      var num = Math.random() * 1000
+      this.imgUrl(num)
       this.img =
-        "https://m.9ji.com/web/api/verifyImg/v1?w=90&h=30&UUID=e2b9b6a3-0276-4675-9dc4-0e3563b54ccd&v=" +
-        num;
+        'https://m.9ji.com/web/api/verifyImg/v1?w=90&h=30&UUID=e2b9b6a3-0276-4675-9dc4-0e3563b54ccd&v=' +
+        num
     },
-    imgUrl(num) {
+    imgUrl (num) {
       this.img =
-        "https://m.9ji.com/web/api/verifyImg/v1?w=90&h=30&UUID=e2b9b6a3-0276-4675-9dc4-0e3563b54ccd&v=" +
-        num;
+        'https://m.9ji.com/web/api/verifyImg/v1?w=90&h=30&UUID=e2b9b6a3-0276-4675-9dc4-0e3563b54ccd&v=' +
+        num
     }
   },
-    mounted() {
-      this.imgUrl(167.53917932581786);
+  mounted () {
+    this.imgUrl(167.53917932581786)
+  },
+  watch: {
+    phoneNum () {
+      if (this.phoneNum.length > 0 && this.picNum.length > 0 && this.checkNum.length > 0) {
+        this.bool = false
+      } else {
+        this.bool = true
+      }
     },
-    watch: {
-        phoneNum(){
-            if(this.phoneNum.length>0 && this.picNum.length>0 && this.checkNum.length>0){
-                this.bool = false;
-            }else{
-                this.bool = true;
-            }
-        },
-        picNum(){
-            if(this.phoneNum.length>0 && this.picNum.length>0 && this.checkNum.length>0){
-                this.bool = false;
-            }else{
-                this.bool = true;
-            }
-        },
-        checkNum(){
-            if(this.phoneNum.length>0 && this.picNum.length>0 && this.checkNum.length>0){
-                this.bool = false;
-            }else{
-                this.bool = true;
-            }
-        }
+    picNum () {
+      if (this.phoneNum.length > 0 && this.picNum.length > 0 && this.checkNum.length > 0) {
+        this.bool = false
+      } else {
+        this.bool = true
+      }
+    },
+    checkNum () {
+      if (this.phoneNum.length > 0 && this.picNum.length > 0 && this.checkNum.length > 0) {
+        this.bool = false
+      } else {
+        this.bool = true
+      }
     }
-};
+  }
+}
 </script>
-
 
 <style lang="scss">
 .register {
@@ -187,4 +199,3 @@ export default {
   }
 }
 </style>
-

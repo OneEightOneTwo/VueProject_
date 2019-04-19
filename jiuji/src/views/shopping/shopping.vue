@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 <template>
   <div id="shopping">
     <div class="header">
@@ -77,7 +78,7 @@ export default {
   },
   methods: {
     onClickLeft () {
-      alert('1212')
+      this.$router.replace({ path: '/' })
     },
     onClickRight () {
     },

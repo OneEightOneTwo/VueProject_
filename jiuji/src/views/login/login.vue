@@ -1,14 +1,11 @@
 <template>
- <div class="jiujiu">   
+ <div class="jiujiu">
    <!-- 头部 -->
    <div class="header">
       <div class="header-title">
           <div class="header-l">
-            <a href="">
-              <i class="icon icon-tubiaozhizuo-"></i>
-              <!-- <span class=""></span> -->
-            </a>  
-          </div>       
+            <i class="icon icon-tubiaozhizuo-" @click="$router.replace({path: '/'})"></i>
+          </div>
           <div class="header-r ">
             <i class="icon icon-shezhi set"></i><span>设置</span>
           </div>
@@ -20,8 +17,12 @@
         <div class="reg-top">
           <a href="javascript:;" class="account-img" ><img src="../../assets/usericon.png" alt=""></a>
           <div class="register">
+<<<<<<< HEAD
             <a href="javascript:;">登录</a><span>
               |</span><a href="javascript:;" >注册</a>  
+=======
+            <a href="javascript:;" @click="$router.push({path: '/redirect_login'})">登录</a><span>|</span><a href="javascript:;" @click="$router.push({path: '/register'})">注册</a>
+>>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
           </div>
         </div>
         <div class="reg-bottom">
@@ -96,12 +97,22 @@
               <a href=""><img src="../../assets/ct_help.png" alt=""><span>帮助中心</span></a>
             </div>
         </div>
+<<<<<<< HEAD
     </div> 
+=======
+    </div>
+>>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
  </div>
 </template>
 <script>
 export default {
+<<<<<<< HEAD
  
+=======
+  methods: {
+
+  }
+>>>>>>> eeb758ce20a46a2704ef5950510ae5852a68cc15
 }
 </script>
 
@@ -124,7 +135,7 @@ export default {
       .header-l {
         float: left;
         height: 44px;
-        
+
         a{
           display: block;
           height: 44px;
@@ -264,6 +275,6 @@ export default {
       }
     }
   }
- 
+
 }
 </style>
